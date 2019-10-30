@@ -3,7 +3,6 @@ const app = express()
 const Swal = require('sweetalert2')
 var server = app.listen(3000);
 
-// var io = require('socket.io')(http);
 var http = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var EventEmitter = require('events')
@@ -34,8 +33,6 @@ io.on('connection', function(socket){
         io.emit('chat message', superman);
     });
 
-
-
     socket.on('taskResponse', data => {
         //calling a function which is inside the router so we can send a res back
         sendResponse(data);
@@ -57,8 +54,6 @@ io.on('connection', function(socket){
 
   });
 
-
-
 app.set('socketio', io);
 
 app.post('/', function (req, res, next) {
@@ -69,14 +64,8 @@ app.post('/', function (req, res, next) {
   res.send('Hello World EventEmitter')
   console.log('request', req.query);
   ee.emit('message', req.query)
-
-
 })
 
 app.get('/sock', function(req, res){
     res.sendFile(__dirname +'/sockets.html');
   });
-
-
-
-// app.listen(3000)
