@@ -1,0 +1,23 @@
+{
+  "name": "bigbluesockets",
+  "version": "1.0.0",
+  "description": "middleware for bigblue sockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "sockets"
+  ],
+  "author": "Fredrick Oluoch",
+  "license": "ISC",
+  "dependencies": {
+    "events": "^3.0.0",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "rest-over-sockets": "^1.0.3",
+    "socket.io": "^2.3.0",
+    "sweetalert2": "^8.18.6"
+  }
+}
